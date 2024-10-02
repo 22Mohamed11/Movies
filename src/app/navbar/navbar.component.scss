@@ -1,0 +1,38 @@
+.nav-padding{
+  padding-top: 3rem;
+}
+//  navbar Scroll change bgColor
+.navbar-default {
+  background-color: #131722;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-scrolled {
+  background-color: #510046;
+  transition: background-color 0.3s ease;
+}
+
+nav
+{
+  z-index: 1;
+}
+
+@media screen and  (max-width: 992px) {
+
+  .nav-padding{
+    padding-top: 1rem;
+  }
+
+  .navbar-toggler {
+    border: 0.5px white solid;
+  }
+
+  .navbar {
+    padding: 0px 0px;
+    flex-direction: column;
+  }
+
+  .social-media{
+    display: none;
+  }
+}

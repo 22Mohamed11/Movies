@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor=" let tv of trendingTv"  class="col-md-6 col-lg-3 mt-4">
+      <div class=" movie my-2 position-relative">
+        <a [routerLink]='["/tvdetails",tv.id]'>
+          <img class="w-100" [src]="imgPrefix+tv.poster_path" [alt]='tv.name'>
+          <h3 class=" my-2 h6">{{tv.name}}</h3>
+          <h4 class="my-2 h6">Date: {{tv.first_air_date}}</h4>
+          <div class="vote">
+            {{tv.vote_average}}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

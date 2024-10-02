@@ -1,0 +1,28 @@
+<div class=" container py-5">
+  <div class=" d-flex justify-content-between mt-2">
+    <div class=" row">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <img class="w-100" [src]="imgPrefix+movieDetails?.poster_path" alt="movieDetails.title">
+      </div>
+      <div class=" col-sm-12 col-md-6 col-lg-8">
+        <h1>{{movieDetails?.title}}</h1>
+        <div class=" row">
+          <div class=" col-lg-6 ml-5">
+            <h3>Overview</h3>
+            <p>{{movieDetails?.overview}}</p>
+            <p>{{movieDetails?.release_date | date:'longDate'}}</p>
+          </div>
+          <div class=" col-lg-6 ml-5 more">
+            <h3>More Details:</h3>
+            <p>Popularity: {{movieDetails?.popularity}}</p>
+            <p>Vote Average: {{movieDetails?.vote_average}}</p>
+            <p>Revenue: {{movieDetails?.revenue | currency:'USD':true}}</p>
+            <p>Budget: {{movieDetails?.budget | currency:'USD':true}}</p>
+            <p>Tagline: {{movieDetails?.tagline}}</p>
+            <p>Status: {{movieDetails?.status}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
