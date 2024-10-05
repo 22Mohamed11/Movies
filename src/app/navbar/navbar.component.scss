@@ -17,6 +17,34 @@ nav
   z-index: 1;
 }
 
+.dropdown:hover .dropdown-menu {
+  background-color: #131722;
+  display: block;
+  margin-top: 0;
+}
+.dropdown-item{
+  color: #ffffff;
+}
+
+.dropdown-item:hover{
+  background-color: #510046;
+}
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  visibility: hidden;
+}
+
+.dropdown-submenu:hover .dropdown-menu {
+  visibility: visible;
+}
+
 @media screen and  (max-width: 992px) {
 
   .nav-padding{

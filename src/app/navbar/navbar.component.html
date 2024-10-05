@@ -4,7 +4,6 @@
       <img src="../../assets/images/logo.png" alt="LOGO">
     </a>
 
-
     <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,6 +25,27 @@
         <li *ngIf="isLogged" class="nav-item">
           <a class="nav-link" routerLink="people">People</a>
         </li>
+        <li>
+          <div class="dropdown show nav-item" *ngIf="isLogged">
+            <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" routerLink="profile">Profile</a></li> <!--[routerLink]='["/profile",user.id]'-->
+              <li class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#" id="languagesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Languages
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="languagesDropdown">
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">Arabic</a></li>
+                </ul>
+              </li>
+              <li><a *ngIf="isLogged" (click)="isLogout()" class="dropdown-item" routerLink="login">Logout</a></li>
+            </ul>
+          </div>
+        </li>
+
       </ul>
       <app-search></app-search>
       <div class="social-media">
@@ -42,9 +62,6 @@
           </li>
           <li *ngIf="!isLogged" class="nav-item">
             <a class="nav-link" routerLink="login">Login</a>
-          </li>
-          <li *ngIf="isLogged" (click)="isLogout()" class="nav-item">
-            <a class="nav-link" >Logout</a>
           </li>
         </ul>
       </div>

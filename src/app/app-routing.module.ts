@@ -25,6 +25,9 @@ const routes: Routes = [
   {path:'people',canActivate:[authGuard],component:PeopleComponent},
   {path:'moviedetails/:id',canActivate:[authGuard],component:MoviedetailsComponent},
   {path:'tvdetails/:id',canActivate:[authGuard],component:TvdetailsComponent},
+  {path:'profile',
+    loadChildren:() => import ('./settings/settings.module') .then(m => m.SettingsModule)
+  },
   {path:'**',component:NotFoundComponent}
 ];
 
