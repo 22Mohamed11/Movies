@@ -20,6 +20,29 @@ body{
   font-family: "Montserrat Alternates";
   background-color: $bgColor;
   color: $fontColor;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-outlet {
+  flex: 1;
+}
+
+app-footer {
+  background-color: #510046;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
 }
 
 .nav-link, a {

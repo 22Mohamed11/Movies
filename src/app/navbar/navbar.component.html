@@ -23,7 +23,7 @@
           <a class="nav-link" routerLink="tv">TV Show</a>
         </li>
         <li *ngIf="isLogged" class="nav-item">
-          <a class="nav-link" routerLink="people">People</a>
+          <a class="nav-link" routerLink="people">Actors</a>
         </li>
         <li>
           <div class="dropdown show nav-item" *ngIf="isLogged">
@@ -47,7 +47,18 @@
         </li>
 
       </ul>
-      <app-search></app-search>
+      <form class="d-flex" role="search">
+        <input
+          class="search"
+          [(ngModel)]="searchText"
+          (ngModelChange)="onSearchTextChange($event)"
+          name="query"
+          class="form-control me-2"
+          type="search"
+          placeholder="Search..."
+          aria-label="Search">
+      </form>
+
       <div class="social-media">
         <i class="fab mx-2 fa-instagram"></i>
         <i class="fab mx-2 fa-spotify"></i>
@@ -68,4 +79,3 @@
     </div>
   </div>
 </nav>
-
